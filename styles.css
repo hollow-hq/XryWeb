@@ -1108,7 +1108,7 @@ footer{
   .hero-actions .btn{ width: 100%; max-width: 340px; }
   .mock-fields{ grid-template-columns: 1fr; }
 
-  .table-wrap{ max-height: none; overflow: visible; }
+  .table-wrap, .table-wrap.tall{ max-height: none; overflow: visible; }
   .cmd-table thead{ display: none; }
   .cmd-table, .cmd-table tbody, .cmd-table tr, .cmd-table td{ display: block; width: 100%; }
   .cmd-table tbody tr{
@@ -1127,7 +1127,7 @@ footer{
   }
   .modal{ padding: 30px 24px; }
   .cmd-controls{ flex-direction: column; align-items: stretch; }
-  .search-field{ max-width: none; }
+  .search-field{ max-width: none; flex: none; }
 }
 
 @media (max-width: 480px){
