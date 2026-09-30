@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/commands", "destination": "/api/commands" },
-    { "source": "/info", "destination": "/api/info" },
-    { "source": "/guilds", "destination": "/api/guilds" }
+    { "source": "/commands", "destination": "/api/commands/commands" },
+    { "source": "/info", "destination": "/api/info/info" },
+    { "source": "/guilds", "destination": "/api/guilds/guilds" }
   ]
 }
