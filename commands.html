@@ -54,52 +54,62 @@
 
 <main id="main">
 
-  <section class="page-hero">
+  <section class="cmd-hero">
     <div class="container">
-      <h1 class="reveal"><span class="accent">Commands</span></h1>
-      <p class="reveal" style="--d:.06s">Every Hollow command, with the arguments and permissions each one needs. Search, sort, and copy — then click a row for the full breakdown.</p>
-    </div>
-  </section>
-
-  <section class="section" style="padding-top: clamp(24px, 3vw, 40px);">
-    <div class="container">
-
-      <div class="cmd-controls reveal">
-        <div class="search-field">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-          <label class="sr-only" for="commandSearch">Search commands</label>
-          <input id="commandSearch" type="search" placeholder="Search commands…" autocomplete="off">
+      <div class="cmd-head reveal">
+        <div class="cmd-head-main">
+          <span class="cmd-head-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 7l4.5 4.5L5 16"/><path d="M12.5 16.5H19"/>
+            </svg>
+          </span>
+          <h1>Commands</h1>
         </div>
 
-        <div class="sort-select">
-          <label class="sr-only" for="sortSelect">Sort commands</label>
-          <select id="sortSelect">
-            <option value="az" selected>Name A–Z</option>
-            <option value="za">Name Z–A</option>
-            <option value="category">Category</option>
-          </select>
+        <div class="cmd-head-tools">
+          <p class="result-meta" id="resultMeta" aria-live="polite"></p>
+
+          <div class="sort-select">
+            <label class="sr-only" for="sortSelect">Sort commands</label>
+            <select id="sortSelect">
+              <option value="az" selected>Name A–Z</option>
+              <option value="za">Name Z–A</option>
+              <option value="category">Category</option>
+            </select>
+          </div>
+
+          <div class="search-wrap" id="searchWrap">
+            <span class="search-label" aria-hidden="true">search</span>
+            <div class="search-box">
+              <label class="sr-only" for="commandSearch">Search commands</label>
+              <input class="search-input" id="commandSearch" type="search" placeholder="Search commands…" autocomplete="off">
+              <button class="search-toggle" id="searchToggle" type="button" aria-label="Search commands" aria-expanded="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="pill-row reveal" id="pillRow" style="--d:.06s"></div>
-
-      <p class="result-meta" id="resultMeta" aria-live="polite"></p>
-
-      <div class="table-wrap tall reveal" style="--d:.1s">
-        <table class="cmd-table" id="commandTable">
-          <thead>
-            <tr>
-              <th scope="col">Command</th>
-              <th scope="col">Category</th>
-              <th scope="col">Description</th>
-              <th scope="col" class="col-copy">Copy</th>
-            </tr>
-          </thead>
-          <tbody id="commandBody"></tbody>
-        </table>
+      <div class="pill-bar reveal" id="pillBar" style="--d:.06s">
+        <div class="pill-row" id="pillRow" role="tablist" aria-label="Command categories"></div>
+        <div class="pill-nav">
+          <button class="pill-nav-btn" id="pillPrev" type="button" aria-label="Scroll categories left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <button class="pill-nav-btn" id="pillNext" type="button" aria-label="Scroll categories right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
+
+      <div class="cmd-grid" id="commandGrid"></div>
 
       <div class="empty-state" id="emptyState">No commands match that search.</div>
+
+      <div class="load-more" id="loadMoreWrap">
+        <button class="btn btn-ghost" id="loadMore" type="button">Show more commands</button>
+      </div>
 
       <div class="table-foot">
         <a class="link-arrow" href="https://discord.com/oauth2/authorize?client_id=1447869784937988201">
@@ -177,7 +187,7 @@
     </p>
 
     <div class="footer-bottom">
-      <p class="credit">© 2026 Hollow — <strong>Made by hollow-hq</strong></p>
+      <p class="credit">© 2026 Hollow — <strong>Made by the Hollow Team</strong></p>
       <div class="footer-legal">
         <a href="terms.html">Terms of Service</a>
         <a href="privacy.html">Privacy Policy</a>
