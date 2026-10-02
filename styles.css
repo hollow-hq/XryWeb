@@ -1728,3 +1728,50 @@ footer{
   .docs-sidebar, .mode-card, .explore-card, .mode-script{ transition: none; }
   .mode-card:hover, .explore-card:hover{ transform: none; }
 }
+
+/* ---- beta notice page ---- */
+.beta-hero{
+  position: relative;
+  padding: calc(var(--nav-h) + clamp(72px, 10vw, 132px)) 0 clamp(18px, 3vw, 30px);
+  text-align: center;
+}
+.beta-prose{ margin-left: auto; margin-right: auto; }
+.status-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e9d5ff;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.36);
+  border-radius: var(--r-pill);
+}
+.status-pill .dot{
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--p2);
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2);
+}
+.beta-title{
+  font-size: clamp(2.6rem, 7.5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+  margin: 22px 0 0;
+}
+.beta-announce{
+  margin: 16px auto 0;
+  max-width: 660px;
+  font-size: clamp(1rem, 2.1vw, 1.2rem);
+  line-height: 1.5;
+  color: var(--txt);
+}
+.beta-lede{
+  margin: 14px auto 0;
+  max-width: 620px;
+  color: var(--txt-3);
+}
