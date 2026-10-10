@@ -2,6 +2,11 @@
   "rewrites": [
     { "source": "/commands", "destination": "/api/commands/commands" },
     { "source": "/info", "destination": "/api/info/info" },
-    { "source": "/guilds", "destination": "/api/guilds/guilds" }
+    { "source": "/guilds", "destination": "/api/guilds/guilds" },
+    { "source": "/_mintlify/:path*", "destination": "https://hollowbot.mintlify.site/_mintlify/:path*"},
+    { "source": "/api/request", "destination": "https://hollowbot.mintlify.site/_mintlify/api/request"},
+    { "source": "/docs", "destination": "https://hollowbot.mintlify.site/docs"},
+    { "source": "/docs/:match*", "destination": "https://hollowbot.mintlify.site/docs/:match*"},
+    { "source": "/mintlify-assets/:path+","destination": "https://hollowbot.mintlify.site/mintlify-assets/:path+"}
   ]
 }
